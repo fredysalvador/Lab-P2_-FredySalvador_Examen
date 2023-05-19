@@ -11,11 +11,11 @@ import java.util.List;
  * @author Fredy Salvador
  */
 public class Escuadron {
-    private String nombre;
-    private String lugarBase;
-    private String lider;
-    private String tipo;
-    private List<Personas> miembros;
+    public String nombre;
+    public String lugarBase;
+    public String lider;
+    public String tipo;
+    public List<Personas> miembros;
 
     public Escuadron(String nombre, String lugarBase, String lider, String tipo, List<Personas> miembros) {
         this.nombre = nombre;

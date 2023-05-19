@@ -4,6 +4,8 @@
  */
 package lab2_examen1_fredysalvador;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Fredy Salvador
@@ -1212,7 +1214,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-
+    ArrayList<Personas> personas = new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bt1Eliminar;
     private javax.swing.JButton Bt1Eliminar1;

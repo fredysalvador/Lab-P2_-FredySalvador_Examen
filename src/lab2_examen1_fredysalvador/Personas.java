@@ -9,13 +9,13 @@ package lab2_examen1_fredysalvador;
  * @author Fredy Salvador
  */
 public class Personas {
-    private String nombre;
-    private String poder;
-    private String debilidad;
-    private Escuadron escuadron;
-    private int fuerza;
-    private int agilidadFisica;
-    private int agilidadMental;
+    public String nombre;
+    public String poder;
+    public String debilidad;
+    public Escuadron escuadron;
+    public int fuerza;
+    public int agilidadFisica;
+    public int agilidadMental;
 
     public Personas() {
     }
