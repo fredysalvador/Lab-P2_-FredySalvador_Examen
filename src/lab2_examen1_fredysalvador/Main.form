@@ -81,6 +81,9 @@
                   <Dimension value="[975, 316]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTabbedPane4MouseClicked"/>
+              </Events>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
@@ -241,13 +244,13 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable3">
+                        <Component class="javax.swing.JTable" name="TablaSquad1">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="5" rowCount="4">
                                 <Column editable="true" title="Nombre Escuadron" type="java.lang.String"/>
                                 <Column editable="true" title="Lugar de la Base" type="java.lang.String"/>
-                                <Column editable="true" title="Tipo Escuadron" type="java.lang.Boolean"/>
+                                <Column editable="true" title="Tipo Escuadron" type="java.lang.String"/>
                                 <Column editable="true" title="Lider" type="java.lang.String"/>
                                 <Column editable="true" title="Equipo" type="java.lang.String"/>
                               </Table>
@@ -339,7 +342,7 @@
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Component id="btAgregar4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BtModificarSquad" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -390,7 +393,7 @@
                               <Component id="jScrollPane8" pref="0" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btAgregar4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BtModificarSquad" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tindex" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -402,12 +405,13 @@
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="tnombre4">
                     </Component>
-                    <Component class="javax.swing.JButton" name="btAgregar4">
+                    <Component class="javax.swing.JButton" name="BtModificarSquad">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Modificar"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAgregar4ActionPerformed"/>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtModificarSquadMouseClicked"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtModificarSquadActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel16">
@@ -454,13 +458,13 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable4">
+                        <Component class="javax.swing.JTable" name="TablaSquad2">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="5" rowCount="4">
                                 <Column editable="true" title="Nombre Squad" type="java.lang.String"/>
                                 <Column editable="true" title="Lugar de la Base" type="java.lang.String"/>
-                                <Column editable="true" title="Tipo Escuadron" type="java.lang.Boolean"/>
+                                <Column editable="true" title="Tipo Escuadron" type="java.lang.String"/>
                                 <Column editable="true" title="Lider" type="java.lang.String"/>
                                 <Column editable="true" title="Equipo" type="java.lang.String"/>
                               </Table>
@@ -562,14 +566,7 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Bt1Eliminar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="tindexEl" min="-2" pref="48" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="BtEliminarSquad" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -579,13 +576,8 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               <Component id="jScrollPane5" min="-2" pref="191" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tindexEl" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="26" max="32767" attributes="0"/>
-                              <Component id="Bt1Eliminar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="54" max="32767" attributes="0"/>
+                              <Component id="BtEliminarSquad" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -599,13 +591,13 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable5">
+                        <Component class="javax.swing.JTable" name="TablaSquad3">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="5" rowCount="4">
                                 <Column editable="true" title="Nombre Escuadron" type="java.lang.String"/>
                                 <Column editable="true" title="Lugar de la Base" type="java.lang.String"/>
-                                <Column editable="true" title="Tipo Escuadron" type="java.lang.Boolean"/>
+                                <Column editable="true" title="Tipo Escuadron" type="java.lang.String"/>
                                 <Column editable="true" title="Lider" type="java.lang.String"/>
                                 <Column editable="true" title="Equipo" type="java.lang.String"/>
                               </Table>
@@ -646,17 +638,14 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JButton" name="Bt1Eliminar">
+                    <Component class="javax.swing.JButton" name="BtEliminarSquad">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Eliminar"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel24">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Index:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="tindexEl">
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtEliminarSquadMouseClicked"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtEliminarSquadActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

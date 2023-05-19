@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -46,10 +47,10 @@ public class Main extends javax.swing.JFrame {
         rdvillano = new javax.swing.JRadioButton();
         jPanel13 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        TablaSquad1 = new javax.swing.JTable();
         jPanel14 = new javax.swing.JPanel();
         tnombre4 = new javax.swing.JTextField();
-        btAgregar4 = new javax.swing.JButton();
+        BtModificarSquad = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         tdebilidad4 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -59,7 +60,7 @@ public class Main extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         tindex = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        TablaSquad2 = new javax.swing.JTable();
         jLabel27 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
@@ -67,10 +68,8 @@ public class Main extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jPanel15 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
-        Bt1Eliminar = new javax.swing.JButton();
-        jLabel24 = new javax.swing.JLabel();
-        tindexEl = new javax.swing.JTextField();
+        TablaSquad3 = new javax.swing.JTable();
+        BtEliminarSquad = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -153,6 +152,11 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPane4.setPreferredSize(new java.awt.Dimension(975, 316));
+        jTabbedPane4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane4MouseClicked(evt);
+            }
+        });
 
         btAgregarSquad.setText("Agregar");
         btAgregarSquad.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -243,7 +247,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane4.addTab("Agregar", jPanel12);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        TablaSquad1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -255,14 +259,14 @@ public class Main extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(TablaSquad1);
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -283,10 +287,15 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane4.addTab("Listar", jPanel13);
 
-        btAgregar4.setText("Modificar");
-        btAgregar4.addActionListener(new java.awt.event.ActionListener() {
+        BtModificarSquad.setText("Modificar");
+        BtModificarSquad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtModificarSquadMouseClicked(evt);
+            }
+        });
+        BtModificarSquad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAgregar4ActionPerformed(evt);
+                BtModificarSquadActionPerformed(evt);
             }
         });
 
@@ -307,7 +316,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel5.setText("Index:");
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        TablaSquad2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -319,14 +328,14 @@ public class Main extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(TablaSquad2);
 
         jLabel27.setText("Lider:");
 
@@ -371,7 +380,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                             .addGap(6, 6, 6)
-                            .addComponent(btAgregar4)
+                            .addComponent(BtModificarSquad)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -412,7 +421,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAgregar4)
+                    .addComponent(BtModificarSquad)
                     .addComponent(jLabel5)
                     .addComponent(tindex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34))
@@ -420,7 +429,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane4.addTab("Modificar", jPanel14);
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        TablaSquad3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -432,18 +441,26 @@ public class Main extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(TablaSquad3);
 
-        Bt1Eliminar.setText("Eliminar");
-
-        jLabel24.setText("Index:");
+        BtEliminarSquad.setText("Eliminar");
+        BtEliminarSquad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtEliminarSquadMouseClicked(evt);
+            }
+        });
+        BtEliminarSquad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtEliminarSquadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -455,12 +472,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Bt1Eliminar)
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tindexEl, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(BtEliminarSquad)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
@@ -468,12 +480,8 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(tindexEl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(Bt1Eliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(BtEliminarSquad)
                 .addContainerGap())
         );
 
@@ -1184,9 +1192,9 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btAgregar3ActionPerformed
 
-    private void btAgregar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregar4ActionPerformed
+    private void BtModificarSquadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtModificarSquadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btAgregar4ActionPerformed
+    }//GEN-LAST:event_BtModificarSquadActionPerformed
 
     private void rdheroe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdheroe1ActionPerformed
         // TODO add your handling code here:
@@ -1244,6 +1252,105 @@ public class Main extends javax.swing.JFrame {
         
     }//GEN-LAST:event_rdheroeMouseClicked
 
+    private void jTabbedPane4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane4MouseClicked
+        // TODO add your handling code here:
+        
+        try {
+
+            //limpiar tabla
+            TablaSquad1.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre Escuadron", "Lugar de la Base", "Tipo Escruadron", "Lider", "Equipo"
+                    }
+            ));
+            
+            TablaSquad2.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre Escuadron", "Lugar de la Base", "Tipo Escruadron", "Lider", "Equipo"
+                    }
+            ));
+            
+            TablaSquad3.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre Escuadron", "Lugar de la Base", "Tipo Escruadron", "Lider", "Equipo"
+                    }
+            ));
+            
+            
+            
+
+            // TODO add your handling code here:
+            for (Escuadron t : escuadrones) {
+                Object[] row = {t.getNombre(), t.getLugarBase(), t.getTipo(), t.getLider(), t.getMiembros()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaSquad1.getModel();
+                modelo.addRow(row);
+             TablaSquad1.setModel(modelo);
+            }
+            
+            for (Escuadron t : escuadrones) {
+                Object[] row = {t.getNombre(), t.getLugarBase(), t.getTipo(), t.getLider(), t.getMiembros()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaSquad2.getModel();
+                modelo.addRow(row);
+             TablaSquad2.setModel(modelo);
+            }
+            
+            for (Escuadron t : escuadrones) {
+                Object[] row = {t.getNombre(), t.getLugarBase(), t.getTipo(), t.getLider(), t.getMiembros()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaSquad3.getModel();
+                modelo.addRow(row);
+             TablaSquad3.setModel(modelo);
+            }
+            
+            
+            
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+    }//GEN-LAST:event_jTabbedPane4MouseClicked
+
+    private void BtModificarSquadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtModificarSquadMouseClicked
+        // TODO add your handling code here:
+          if (TablaSquad2.getSelectedRow() >= 0) {
+            DefaultTableModel modelo
+                    = (DefaultTableModel) TablaSquad2.getModel();
+            
+            int mes = Integer.parseInt(
+                    JOptionPane.showInputDialog("nuevo mes")
+            );
+            ((Date) modelo.getValueAt(
+                    TablaSquad2.getSelectedRow(), 3)).setMonth(mes);
+            TablaSquad2.setModel(modelo);
+            //tf_edad_maxima.setText(maxima_edad());
+        }
+        
+        
+    }//GEN-LAST:event_BtModificarSquadMouseClicked
+
+    private void BtEliminarSquadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtEliminarSquadMouseClicked
+        // TODO add your handling code here:
+         if (TablaSquad3.getSelectedRow() >= 0) {
+            DefaultTableModel modelo
+                    = (DefaultTableModel) TablaSquad3.getModel();
+            modelo.removeRow(TablaSquad3.getSelectedRow());
+            TablaSquad3.setModel(modelo);
+            //tf_edad_maxima.setText(maxima_edad());
+             int selectedRow = TablaSquad3.getSelectedRow();
+            
+            selectedRow = selectedRow + 1;
+            escuadrones.remove(selectedRow);
+            
+        }
+    }//GEN-LAST:event_BtEliminarSquadMouseClicked
+
+    private void BtEliminarSquadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtEliminarSquadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtEliminarSquadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1283,13 +1390,16 @@ public class Main extends javax.swing.JFrame {
     ArrayList<Escuadron> escuadrones = new ArrayList<>();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Bt1Eliminar;
     private javax.swing.JButton Bt1Eliminar1;
     private javax.swing.JButton Bt1Eliminar2;
+    private javax.swing.JButton BtEliminarSquad;
+    private javax.swing.JButton BtModificarSquad;
+    private javax.swing.JTable TablaSquad1;
+    private javax.swing.JTable TablaSquad2;
+    private javax.swing.JTable TablaSquad3;
     private javax.swing.JButton btAgregar;
     private javax.swing.JButton btAgregar1;
     private javax.swing.JButton btAgregar3;
-    private javax.swing.JButton btAgregar4;
     private javax.swing.JButton btAgregar5;
     private javax.swing.JButton btAgregarSquad;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -1309,7 +1419,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -1350,9 +1459,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTextArea jTextArea1;
@@ -1379,7 +1485,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tfuerza2;
     private javax.swing.JTextField tfuerza3;
     private javax.swing.JTextField tindex;
-    private javax.swing.JTextField tindexEl;
     private javax.swing.JTextField tindexEl1;
     private javax.swing.JTextField tindexEl2;
     private javax.swing.JTextField tnombre;
