@@ -1542,6 +1542,22 @@ public class Main extends javax.swing.JFrame {
                         "Nombre Heroe", "Debilidad Heroe", "Agilidad Fisica", "Poder", "Fuerza", "Agilidad Mental"
                     }
             ));
+            
+            TablaHeroe2.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre Heroe", "Debilidad Heroe", "Agilidad Fisica", "Poder", "Fuerza", "Agilidad Mental"
+                    }
+            ));
+            
+            TablaHeroe3.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre Heroe", "Debilidad Heroe", "Agilidad Fisica", "Poder", "Fuerza", "Agilidad Mental"
+                    }
+            ));
+                  
+                  
                   
 
             // TODO add your handling code here:
@@ -1550,6 +1566,19 @@ public class Main extends javax.swing.JFrame {
                 DefaultTableModel modelo = (DefaultTableModel) TablaHeroe1.getModel();
                 modelo.addRow(row);
              TablaHeroe1.setModel(modelo);
+            }
+            
+            for (Personas t : personas) {
+                Object[] row = {t.getNombre(), t.getDebilidad(), t.getAgilidadFisica(), t.getPoder(), t.getFuerza(), t.getAgilidadMental()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaHeroe2.getModel();
+                modelo.addRow(row);
+             TablaHeroe2.setModel(modelo);
+            }
+            for (Personas t : personas) {
+                Object[] row = {t.getNombre(), t.getDebilidad(), t.getAgilidadFisica(), t.getPoder(), t.getFuerza(), t.getAgilidadMental()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaHeroe3.getModel();
+                modelo.addRow(row);
+             TablaHeroe3.setModel(modelo);
             }
             
             
