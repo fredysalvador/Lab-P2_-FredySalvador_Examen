@@ -910,6 +910,11 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane1.addTab("Heroe", jPanel2);
 
         jTabbedPane2.setPreferredSize(new java.awt.Dimension(975, 316));
+        jTabbedPane2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane2MouseClicked(evt);
+            }
+        });
 
         btAgregarVillano.setText("Agregar");
         btAgregarVillano.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1588,6 +1593,64 @@ public class Main extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jTabbedPane3MouseClicked
+
+    private void jTabbedPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane2MouseClicked
+        // TODO add your handling code here:
+        
+         try {
+
+            //limpiar tabla
+            TablaVillano1.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre Villano", "Debilidad Villano", "Agilidad Fisica", "Poder", "Fuerza", "Agilidad Mental"
+                    }
+            ));
+            
+            TablaVillano2.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre Villano", "Debilidad Villano", "Agilidad Fisica", "Poder", "Fuerza", "Agilidad Mental"
+                    }
+            ));
+            
+            TablaVillano4.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre Villano", "Debilidad Villano", "Agilidad Fisica", "Poder", "Fuerza", "Agilidad Mental"
+                    }
+            ));
+                  
+                  
+                  
+
+            // TODO add your handling code here:
+            for (Personas t : personas) {
+                Object[] row = {t.getNombre(), t.getDebilidad(), t.getAgilidadFisica(), t.getPoder(), t.getFuerza(), t.getAgilidadMental()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaVillano1.getModel();
+                modelo.addRow(row);
+             TablaVillano1.setModel(modelo);
+            }
+            
+            for (Personas t : personas) {
+                Object[] row = {t.getNombre(), t.getDebilidad(), t.getAgilidadFisica(), t.getPoder(), t.getFuerza(), t.getAgilidadMental()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaVillano2.getModel();
+                modelo.addRow(row);
+             TablaVillano2.setModel(modelo);
+            }
+            for (Personas t : personas) {
+                Object[] row = {t.getNombre(), t.getDebilidad(), t.getAgilidadFisica(), t.getPoder(), t.getFuerza(), t.getAgilidadMental()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaVillano4.getModel();
+                modelo.addRow(row);
+             TablaVillano4.setModel(modelo);
+            }
+            
+            
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_jTabbedPane2MouseClicked
 
     /**
      * @param args the command line arguments
