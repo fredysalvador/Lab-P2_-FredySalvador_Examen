@@ -305,7 +305,13 @@ public class Main extends javax.swing.JFrame {
 
         jLabel18.setText("Lugar de la Base:");
 
+        rdheroe1.setSelected(true);
         rdheroe1.setText("Heroe");
+        rdheroe1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rdheroe1MouseClicked(evt);
+            }
+        });
         rdheroe1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rdheroe1ActionPerformed(evt);
@@ -313,6 +319,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         rdvillano1.setText("Villano");
+        rdvillano1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rdvillano1MouseClicked(evt);
+            }
+        });
 
         jLabel5.setText("Index:");
 
@@ -1350,6 +1361,16 @@ public class Main extends javax.swing.JFrame {
     private void BtEliminarSquadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtEliminarSquadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtEliminarSquadActionPerformed
+
+    private void rdheroe1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rdheroe1MouseClicked
+        // TODO add your handling code here:
+        rdvillano.setSelected(false);
+    }//GEN-LAST:event_rdheroe1MouseClicked
+
+    private void rdvillano1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rdvillano1MouseClicked
+        // TODO add your handling code here:
+        rdheroe.setSelected(false);
+    }//GEN-LAST:event_rdvillano1MouseClicked
 
     /**
      * @param args the command line arguments
