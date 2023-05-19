@@ -12,7 +12,7 @@ public class Personas {
     private String nombre;
     private String poder;
     private String debilidad;
-    private String escuadron;
+    private Escuadron escuadron;
     private int fuerza;
     private int agilidadFisica;
     private int agilidadMental;
@@ -24,7 +24,6 @@ public class Personas {
         this.nombre = nombre;
         this.poder = poder;
         this.debilidad = debilidad;
-        this.escuadron = escuadron;
         this.fuerza = fuerza;
         this.agilidadFisica = agilidadFisica;
         this.agilidadMental = agilidadMental;
@@ -54,11 +53,11 @@ public class Personas {
         this.debilidad = debilidad;
     }
 
-    public String getEscuadron() {
+    public Escuadron getEscuadron() {
         return escuadron;
     }
 
-    public void setEscuadron(String escuadron) {
+    public void setEscuadron(Escuadron escuadron) {
         this.escuadron = escuadron;
     }
 
