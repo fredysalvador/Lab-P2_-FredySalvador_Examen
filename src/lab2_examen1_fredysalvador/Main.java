@@ -1536,20 +1536,20 @@ public class Main extends javax.swing.JFrame {
         try {
 
             //limpiar tabla
-            TablaSquad1.setModel(new javax.swing.table.DefaultTableModel(
+            TablaHeroe1.setModel(new javax.swing.table.DefaultTableModel(
                     new Object[][]{},
                     new String[]{
-                        "Nombre Escuadron", "Lugar de la Base", "Tipo Escruadron", "Lider", "Equipo"
+                        "Nombre Heroe", "Debilidad Heroe", "Agilidad Fisica", "Poder", "Fuerza", "Agilidad Mental"
                     }
             ));
                   
 
             // TODO add your handling code here:
-            for (Escuadron t : escuadrones) {
-                Object[] row = {t.getNombre(), t.getLugarBase(), t.getTipo(), t.getLider(), t.getMiembros()};
-                DefaultTableModel modelo = (DefaultTableModel) TablaSquad1.getModel();
+            for (Personas t : personas) {
+                Object[] row = {t.getNombre(), t.getDebilidad(), t.getAgilidadFisica(), t.getPoder(), t.getFuerza(), t.getAgilidadMental()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaHeroe1.getModel();
                 modelo.addRow(row);
-             TablaSquad1.setModel(modelo);
+             TablaHeroe1.setModel(modelo);
             }
             
             
