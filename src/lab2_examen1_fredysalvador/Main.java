@@ -4,7 +4,11 @@
  */
 package lab2_examen1_fredysalvador;
 
+import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,9 +36,9 @@ public class Main extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel12 = new javax.swing.JPanel();
-        tnombre2 = new javax.swing.JTextField();
-        btAgregar2 = new javax.swing.JButton();
-        tdebilidad2 = new javax.swing.JTextField();
+        tnombresquad = new javax.swing.JTextField();
+        btAgregarSquad = new javax.swing.JButton();
+        tdireccionsquad = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -150,10 +154,15 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane4.setPreferredSize(new java.awt.Dimension(975, 316));
 
-        btAgregar2.setText("Agregar");
-        btAgregar2.addActionListener(new java.awt.event.ActionListener() {
+        btAgregarSquad.setText("Agregar");
+        btAgregarSquad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btAgregarSquadMouseClicked(evt);
+            }
+        });
+        btAgregarSquad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAgregar2ActionPerformed(evt);
+                btAgregarSquadActionPerformed(evt);
             }
         });
 
@@ -163,7 +172,13 @@ public class Main extends javax.swing.JFrame {
 
         jLabel10.setText("Tipo de Escuadron:");
 
+        rdheroe.setSelected(true);
         rdheroe.setText("Heroe");
+        rdheroe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rdheroeMouseClicked(evt);
+            }
+        });
         rdheroe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rdheroeActionPerformed(evt);
@@ -171,6 +186,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         rdvillano.setText("Villano");
+        rdvillano.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rdvillanoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -184,13 +204,13 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(jPanel12Layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addGap(18, 18, 18)
-                                .addComponent(tnombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tnombresquad, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel12Layout.createSequentialGroup()
                                     .addComponent(jLabel9)
                                     .addGap(18, 18, 18)
-                                    .addComponent(tdebilidad2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(btAgregar2))))
+                                    .addComponent(tdireccionsquad, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btAgregarSquad))))
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jLabel10)
@@ -206,18 +226,18 @@ public class Main extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(tnombre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tnombresquad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(tdebilidad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tdireccionsquad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(rdheroe)
                     .addComponent(rdvillano))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                .addComponent(btAgregar2)
+                .addComponent(btAgregarSquad)
                 .addGap(29, 29, 29))
         );
 
@@ -323,24 +343,23 @@ public class Main extends javax.swing.JFrame {
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel14Layout.createSequentialGroup()
+                            .addComponent(jLabel16)
+                            .addGap(18, 18, 18)
+                            .addComponent(tnombre4, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel14Layout.createSequentialGroup()
+                            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel27)
+                                .addComponent(jLabel18))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tdebilidad4)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel14Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addGap(18, 18, 18)
-                                .addComponent(tnombre4, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel14Layout.createSequentialGroup()
-                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel18))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tdebilidad4, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel14Layout.createSequentialGroup()
                                 .addComponent(jLabel17)
@@ -355,8 +374,9 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(btAgregar4)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(tindex, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tindex, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(6, 6, 6))
                         .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
@@ -369,7 +389,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(tnombre4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -395,7 +415,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(btAgregar4)
                     .addComponent(jLabel5)
                     .addComponent(tindex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(34, 34, 34))
         );
 
         jTabbedPane4.addTab("Modificar", jPanel14);
@@ -1152,9 +1172,9 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btAgregarActionPerformed
 
-    private void btAgregar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregar2ActionPerformed
+    private void btAgregarSquadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregarSquadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btAgregar2ActionPerformed
+    }//GEN-LAST:event_btAgregarSquadActionPerformed
 
     private void rdheroeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdheroeActionPerformed
         // TODO add your handling code here:
@@ -1179,6 +1199,50 @@ public class Main extends javax.swing.JFrame {
     private void btAgregar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregar5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btAgregar5ActionPerformed
+
+    private void btAgregarSquadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarSquadMouseClicked
+        // TODO add your handling code here:
+        String nombre, Tipo, direccion;
+        try {     
+            nombre = tnombresquad.getText();
+            direccion = tdireccionsquad.getText();
+            if (rdheroe.isSelected()) {
+                Tipo = "Heroe";
+            } else {
+                Tipo = "Villano";
+            } 
+            
+            Escuadron sq = new Escuadron(nombre, direccion, null, Tipo, null);
+            
+            escuadrones.add(sq);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+        
+        
+        
+    }//GEN-LAST:event_btAgregarSquadMouseClicked
+
+    private void rdvillanoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rdvillanoMouseClicked
+        // TODO add your handling code here:
+        
+        rdheroe.setSelected(false);
+        
+    }//GEN-LAST:event_rdvillanoMouseClicked
+
+    private void rdheroeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rdheroeMouseClicked
+        // TODO add your handling code here:
+        
+        rdvillano.setSelected(false);
+        
+    }//GEN-LAST:event_rdheroeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1214,17 +1278,20 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
+    
     ArrayList<Personas> personas = new ArrayList();
+    ArrayList<Escuadron> escuadrones = new ArrayList<>();
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bt1Eliminar;
     private javax.swing.JButton Bt1Eliminar1;
     private javax.swing.JButton Bt1Eliminar2;
     private javax.swing.JButton btAgregar;
     private javax.swing.JButton btAgregar1;
-    private javax.swing.JButton btAgregar2;
     private javax.swing.JButton btAgregar3;
     private javax.swing.JButton btAgregar4;
     private javax.swing.JButton btAgregar5;
+    private javax.swing.JButton btAgregarSquad;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1303,10 +1370,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tagilidadmental3;
     private javax.swing.JTextField tdebilidad;
     private javax.swing.JTextField tdebilidad1;
-    private javax.swing.JTextField tdebilidad2;
     private javax.swing.JTextField tdebilidad3;
     private javax.swing.JTextField tdebilidad4;
     private javax.swing.JTextField tdebilidad5;
+    private javax.swing.JTextField tdireccionsquad;
     private javax.swing.JTextField tfuerza;
     private javax.swing.JTextField tfuerza1;
     private javax.swing.JTextField tfuerza2;
@@ -1317,10 +1384,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tindexEl2;
     private javax.swing.JTextField tnombre;
     private javax.swing.JTextField tnombre1;
-    private javax.swing.JTextField tnombre2;
     private javax.swing.JTextField tnombre3;
     private javax.swing.JTextField tnombre4;
     private javax.swing.JTextField tnombre5;
+    private javax.swing.JTextField tnombresquad;
     private javax.swing.JTextField tpoder;
     private javax.swing.JTextField tpoder1;
     private javax.swing.JTextField tpoder2;
