@@ -85,7 +85,7 @@ public class Main extends javax.swing.JFrame {
         tfuerza = new javax.swing.JTextField();
         xd1 = new javax.swing.JLabel();
         tagilidadmental = new javax.swing.JTextField();
-        btAgregar = new javax.swing.JButton();
+        btAgregarHeroe = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -112,9 +112,9 @@ public class Main extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
-        tnombre3 = new javax.swing.JTextField();
-        btAgregar3 = new javax.swing.JButton();
-        tdebilidad3 = new javax.swing.JTextField();
+        tnombre2 = new javax.swing.JTextField();
+        btAgregarVillano = new javax.swing.JButton();
+        tdebilidad2 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         tagilidadfisica2 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -529,10 +529,15 @@ public class Main extends javax.swing.JFrame {
 
         xd1.setText("Agilidad Mental:");
 
-        btAgregar.setText("Agregar");
-        btAgregar.addActionListener(new java.awt.event.ActionListener() {
+        btAgregarHeroe.setText("Agregar");
+        btAgregarHeroe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btAgregarHeroeMouseClicked(evt);
+            }
+        });
+        btAgregarHeroe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAgregarActionPerformed(evt);
+                btAgregarHeroeActionPerformed(evt);
             }
         });
 
@@ -563,7 +568,7 @@ public class Main extends javax.swing.JFrame {
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel8Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(btAgregar))
+                                        .addComponent(btAgregarHeroe))
                                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel8Layout.createSequentialGroup()
                                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -610,7 +615,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(xd1)
                     .addComponent(tagilidadmental, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btAgregar)
+                .addComponent(btAgregarHeroe)
                 .addGap(13, 13, 13))
         );
 
@@ -843,10 +848,15 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane2.setPreferredSize(new java.awt.Dimension(975, 316));
 
-        btAgregar3.setText("Agregar");
-        btAgregar3.addActionListener(new java.awt.event.ActionListener() {
+        btAgregarVillano.setText("Agregar");
+        btAgregarVillano.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btAgregarVillanoMouseClicked(evt);
+            }
+        });
+        btAgregarVillano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAgregar3ActionPerformed(evt);
+                btAgregarVillanoActionPerformed(evt);
             }
         });
 
@@ -879,17 +889,17 @@ public class Main extends javax.swing.JFrame {
                                 .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addComponent(jLabel11)
                                     .addGap(18, 18, 18)
-                                    .addComponent(tdebilidad3, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tdebilidad2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addComponent(jLabel15)
                                     .addGap(18, 18, 18)
-                                    .addComponent(tnombre3, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(tnombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(btAgregar3))
+                                        .addComponent(btAgregarVillano))
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel4Layout.createSequentialGroup()
                                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -914,11 +924,11 @@ public class Main extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(tnombre3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tnombre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(tdebilidad3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tdebilidad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
@@ -936,7 +946,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(xd5)
                     .addComponent(tagilidadmental2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btAgregar3)
+                .addComponent(btAgregarVillano)
                 .addGap(13, 13, 13))
         );
 
@@ -1187,9 +1197,9 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregarActionPerformed
+    private void btAgregarHeroeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregarHeroeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btAgregarActionPerformed
+    }//GEN-LAST:event_btAgregarHeroeActionPerformed
 
     private void btAgregarSquadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregarSquadActionPerformed
         // TODO add your handling code here:
@@ -1199,9 +1209,9 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rdheroeActionPerformed
 
-    private void btAgregar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregar3ActionPerformed
+    private void btAgregarVillanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregarVillanoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btAgregar3ActionPerformed
+    }//GEN-LAST:event_btAgregarVillanoActionPerformed
 
     private void BtModificarSquadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtModificarSquadActionPerformed
         // TODO add your handling code here:
@@ -1372,6 +1382,65 @@ public class Main extends javax.swing.JFrame {
         rdheroe.setSelected(false);
     }//GEN-LAST:event_rdvillano1MouseClicked
 
+    private void btAgregarHeroeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarHeroeMouseClicked
+        // TODO add your handling code here:
+           String nombre, debilidad, poder;
+           int agilidadfisica, fuerza,agilidadmental;
+        try {     
+            nombre = tnombre.getText();
+            debilidad = tdebilidad.getText();
+            poder = tpoder.getText();
+            agilidadfisica = Integer.parseInt(tagilidadfisica.getText());
+            agilidadmental = Integer.parseInt(tagilidadmental.getText());
+            fuerza = Integer.parseInt(tfuerza.getText());
+            
+ 
+            Personas p = new Personas(nombre, poder, debilidad, "Heroe", fuerza, agilidadfisica, agilidadmental);
+            
+            personas.add(p);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+
+    }//GEN-LAST:event_btAgregarHeroeMouseClicked
+
+    private void btAgregarVillanoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarVillanoMouseClicked
+        // TODO add your handling code here:
+        String nombre, debilidad, poder;
+           int agilidadfisica, fuerza,agilidadmental;
+        try {     
+            nombre = tnombre2.getText();
+            debilidad = tdebilidad2.getText();
+            poder = tpoder2.getText();
+            agilidadfisica = Integer.parseInt(tagilidadfisica2.getText());
+            agilidadmental = Integer.parseInt(tagilidadmental2.getText());
+            fuerza = Integer.parseInt(tfuerza2.getText());
+            
+ 
+            Personas p = new Personas(nombre, poder, debilidad, "Villano", fuerza, agilidadfisica, agilidadmental);
+            
+            personas.add(p);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+        
+        
+    }//GEN-LAST:event_btAgregarVillanoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1418,11 +1487,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable TablaSquad1;
     private javax.swing.JTable TablaSquad2;
     private javax.swing.JTable TablaSquad3;
-    private javax.swing.JButton btAgregar;
     private javax.swing.JButton btAgregar1;
-    private javax.swing.JButton btAgregar3;
     private javax.swing.JButton btAgregar5;
+    private javax.swing.JButton btAgregarHeroe;
     private javax.swing.JButton btAgregarSquad;
+    private javax.swing.JButton btAgregarVillano;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1497,7 +1566,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tagilidadmental3;
     private javax.swing.JTextField tdebilidad;
     private javax.swing.JTextField tdebilidad1;
-    private javax.swing.JTextField tdebilidad3;
+    private javax.swing.JTextField tdebilidad2;
     private javax.swing.JTextField tdebilidad4;
     private javax.swing.JTextField tdebilidad5;
     private javax.swing.JTextField tdireccionsquad;
@@ -1510,7 +1579,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tindexEl2;
     private javax.swing.JTextField tnombre;
     private javax.swing.JTextField tnombre1;
-    private javax.swing.JTextField tnombre3;
+    private javax.swing.JTextField tnombre2;
     private javax.swing.JTextField tnombre4;
     private javax.swing.JTextField tnombre5;
     private javax.swing.JTextField tnombresquad;

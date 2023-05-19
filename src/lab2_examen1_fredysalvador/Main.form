@@ -731,7 +731,7 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                      <Component id="btAgregar" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="btAgregarHeroe" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                                       <Group type="102" alignment="0" attributes="0">
@@ -799,7 +799,7 @@
                                   <Component id="tagilidadmental" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btAgregar" min="-2" max="-2" attributes="0"/>
+                              <Component id="btAgregarHeroe" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -848,12 +848,13 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="tagilidadmental">
                     </Component>
-                    <Component class="javax.swing.JButton" name="btAgregar">
+                    <Component class="javax.swing.JButton" name="btAgregarHeroe">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Agregar"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAgregarActionPerformed"/>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btAgregarHeroeMouseClicked"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAgregarHeroeActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1308,12 +1309,12 @@
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="tdebilidad3" min="-2" pref="207" max="-2" attributes="0"/>
+                                                  <Component id="tdebilidad2" min="-2" pref="207" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="tnombre3" min="-2" pref="207" max="-2" attributes="0"/>
+                                                  <Component id="tnombre2" min="-2" pref="207" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -1321,7 +1322,7 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                      <Component id="btAgregar3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="btAgregarVillano" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                                       <Group type="102" alignment="0" attributes="0">
@@ -1361,12 +1362,12 @@
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tnombre3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tnombre2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tdebilidad3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tdebilidad2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1389,24 +1390,25 @@
                                   <Component id="tagilidadmental2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btAgregar3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btAgregarVillano" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="tnombre3">
+                    <Component class="javax.swing.JTextField" name="tnombre2">
                     </Component>
-                    <Component class="javax.swing.JButton" name="btAgregar3">
+                    <Component class="javax.swing.JButton" name="btAgregarVillano">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Agregar"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAgregar3ActionPerformed"/>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btAgregarVillanoMouseClicked"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAgregarVillanoActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tdebilidad3">
+                    <Component class="javax.swing.JTextField" name="tdebilidad2">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel11">
                       <Properties>
